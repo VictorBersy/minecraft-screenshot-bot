@@ -112,9 +112,9 @@ func setRandomWeather() {
 	var weather string
 	rand := rand.Float64()
 	switch {
-	case rand <= 0.15: // 15% chance of rain
+	case rand <= 0.075: // 7.5% chance of rain
 		weather = "rain"
-	case rand >= 0.9: // 10% chance of thunderstorm
+	case rand >= 0.95: // 5% chance of thunderstorm
 		weather = "thunder"
 	default:
 		weather = "clear"
