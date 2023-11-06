@@ -36,7 +36,7 @@ func postScreenshotToSocialMedia(screenFile string, iteration int) {
 	log.Info(fmt.Sprintf("Screenshot uploaded %s (%s)", screenFile, attachment.URL))
 
 	// Schedule post
-	scheduledAt := time.Now().Add(time.Hour * time.Duration(iteration)) // TODO: Set to X hours after latest post
+	scheduledAt := time.Now().Add(time.Hour * 4 * time.Duration(iteration)) // TODO: Set to X hours after latest post
 	post := &mastodon.Toot{
 		MediaIDs:    []mastodon.ID{attachment.ID},
 		Sensitive:   false,
