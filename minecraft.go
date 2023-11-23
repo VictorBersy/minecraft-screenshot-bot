@@ -72,7 +72,7 @@ func launchGame() {
 
 func createNewWorld() {
 	// Navigate the menu to create a new world
-	robotgo.KeySleep = 300
+	robotgo.KeySleep = 350
 	robotgo.KeyTap("down")  // Singleplayer
 	robotgo.KeyTap("enter") // Enter singleplayer
 	robotgo.KeyTap("tab")
@@ -112,9 +112,9 @@ func setRandomWeather() {
 	var weather string
 	rand := rand.Float64()
 	switch {
-	case rand <= 0.075: // 7.5% chance of rain
+	case rand <= 0.025: // 2.5% chance of rain
 		weather = "rain"
-	case rand >= 0.95: // 5% chance of thunderstorm
+	case rand >= 0.075: // 7.5% chance of thunderstorm
 		weather = "thunder"
 	default:
 		weather = "clear"
@@ -224,6 +224,6 @@ func getRandomAngle() PlayerRot {
 }
 
 func getRandomTime() string {
-	// Set time between 05:00 and 21:00
-	return fmt.Sprint(rand.Intn(5000) + rand.Intn(16000))
+	// Set time between 06:00 and 20:00
+	return fmt.Sprint(rand.Intn(6000) + rand.Intn(15000))
 }
