@@ -109,16 +109,15 @@ func setRandomTime() {
 }
 
 func setRandomWeather() {
-	var weather string
-	rand := rand.Float64()
-	switch {
-	case rand <= 0.025: // 2.5% chance of rain
-		weather = "rain"
-	case rand >= 0.075: // 7.5% chance of thunderstorm
-		weather = "thunder"
-	default:
-		weather = "clear"
+	// Set weather to clear by default
+	weather := "clear"
+
+	weatherRand := rand.Float64()
+	if weatherRand <= 0.1 { // 10% chance of rain or thunder
+		rainy := []string{"rain", "thunder"}
+		weather = rainy[rand.Intn(len(rainy))] // 50% chance of rain or thunder
 	}
+
 	log.Info(fmt.Sprintf("Weather set to %s", weather))
 	runMinecraftChatCommand(fmt.Sprintf("/weather %s", weather))
 }
