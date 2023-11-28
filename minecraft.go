@@ -223,6 +223,6 @@ func getRandomAngle() PlayerRot {
 }
 
 func getRandomTime() string {
-	// Set time between 06:00 and 20:00
-	return fmt.Sprint(rand.Intn(6000) + rand.Intn(15000))
+	// https://minecraft.fandom.com/fr/wiki/Cycle_jour-nuit#P%C3%A9riodes_d'un_cycle
+	return fmt.Sprint(rand.Intn(450) + rand.Intn(13805))
 }
