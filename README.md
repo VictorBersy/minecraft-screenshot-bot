@@ -4,6 +4,8 @@
 
 Automatically capture and share your Minecraft moments! This script launches Minecraft, takes screenshots, and posts them directly to Mastodon.
 
+How does it work? French article: https://blog.alyxpractice.com/comment-fonctionne-mon-bot-craftviews/
+
 ## 📸 Sample Screenshots
 
 | ![Screenshot 1](./docs/img/screenshot_01.png) | ![Screenshot 2](./docs/img/screenshot_02.png) |
